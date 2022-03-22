@@ -18,6 +18,15 @@ export default class Account extends Component<any, IStates> {
     };
   }
 
+  toggleOrder() {
+    if (this.context.accountInfo) {
+      this.context.socket.emit(
+        "toggle order",
+        !this.context.accountInfo.deal_enable
+      );
+    }
+  }
+
   exit() {
     this.context.socket.disconnect();
     localStorage.removeItem("token");
@@ -54,9 +63,28 @@ export default class Account extends Component<any, IStates> {
                 }`}
               >
                 <h2 onClick={() => this.setState({ isMenu: false })}>
-                  Токен для пополнения
+                  Кошелёк для пополнения
                 </h2>
               </CopyComponent>
+            </div>
+            <div>
+              <h2
+                className={
+                  this.context.accountInfo &&
+                  this.context.accountInfo.deal_enable
+                    ? "green"
+                    : "red"
+                }
+                onClick={() => this.toggleOrder()}
+              >
+                Сделки{" "}
+                {`(${
+                  this.context.accountInfo &&
+                  this.context.accountInfo.deal_enable
+                    ? "ВКЛ"
+                    : "ВЫКЛ"
+                })`}
+              </h2>
             </div>
             <div>
               <h2 onClick={() => this.exit()}>Выход</h2>

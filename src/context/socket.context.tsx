@@ -110,11 +110,22 @@ export default class SocketProvider extends Component<any, IState> {
           | { status: "Error"; description: string }
       ) => {
         if (data.status === "success") {
+          let alias = undefined;
+          let depositToken = undefined;
+
+          if (data.alias !== "") {
+            alias = data.alias;
+          }
+
+          if (data.depositToken !== "") {
+            depositToken = data.depositToken;
+          }
+
           this.setState({
             accountInfo: {
               ...data.data,
-              alias: data.alias,
-              depositToken: data.depositToken,
+              alias,
+              depositToken,
             },
           });
           document.title = `${data.data.direction.toLocaleUpperCase()} ${

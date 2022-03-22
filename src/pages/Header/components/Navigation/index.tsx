@@ -118,7 +118,7 @@ export default class Navigation extends Component<any, IStates> {
                       this.context.nav === StatusNav.wallets ? "active" : ""
                     }
                   >
-                    Кашельки
+                    Кошельки
                   </h1>
                 </div>
               </div>
