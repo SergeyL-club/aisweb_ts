@@ -161,7 +161,20 @@ export default class Row extends Component<IProps, IStates> {
                   }}
                   text={this.props.order.created_at}
                 >
-                  <h2 style={{ cursor: "pointer" }}>
+                  <h2
+                    className={
+                      this.props.status !== StatusSell.finished &&
+                      this.props.order.status !==
+                        StatusSell.finished[0].toLocaleUpperCase() +
+                          StatusSell.finished.slice(
+                            1,
+                            StatusSell.finished.length
+                          )
+                        ? "noPadding"
+                        : ""
+                    }
+                    style={{ cursor: "pointer" }}
+                  >
                     {this.props.order.created_at}
                   </h2>
                 </CopyComponent>

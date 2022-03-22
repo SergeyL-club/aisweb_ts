@@ -196,6 +196,10 @@ export default class SocketProvider extends Component<any, IState> {
       this.setState({ walletArray: undefined });
     });
 
+    socket.on("set filter add sale", () => {
+      this.setState({ saleArray: undefined });
+    });
+
     socket.on("set filter sale", () => {
       this.setState({ saleArray: undefined });
     });

@@ -54,3 +54,50 @@ $ais-green: #5BD350
   .menuSearch
     margin-right: 100px
     margin-left: auto
+    position: relative
+    display: flex
+    div
+      margin: auto
+      position: relative
+      h2
+        font-family: Roboto-Regular
+        font-weight: normal
+        font-size: 24px
+        color: $ais-white
+        cursor: pointer
+        &:hover
+          color: $ais-blue
+      .filterSaleForm
+        position: absolute
+        display: flex
+        flex-direction: column
+        margin-top: 10px
+        right: -50%
+        grid-gap: 10px
+        z-index: 1
+        padding: 10px
+        background: $ais-black
+        border: 1px solid $ais-second-black
+        input
+          font-size: 18px
+          padding-top: 5px
+          padding-bottom: 5px
+          padding-left: 10px
+        div
+          display: flex
+          grid-gap: 10px
+          &.buttons
+          button
+            cursor: pointer
+            &:first-child
+              background: $ais-red
+              &:hover
+                background: #cf5151
+              &:active
+                background: #bd4949
+            &:last-child
+              background: $ais-green
+              &:hover
+                background: #54c44a
+              &:active
+                background: #4aad41
