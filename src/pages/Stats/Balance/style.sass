@@ -1,0 +1,66 @@
+$ais-black: #181820
+$ais-white: #E8E8E8
+$ais-second-black: #3C3C4D
+$ais-blue: #6C76CC
+$ais-red: #D65353
+$ais-orange: #FFAD4D
+$ais-green: #5BD350
+
+.balance
+  position: relative
+  width: calc( 100% - 40px )
+  padding: 20px
+  height: calc( 100% - 40px )
+  margin: auto
+  max-width: 500px
+  border: 1px solid $ais-second-black
+  grid-column: 1
+  grid-row: 1
+  h2
+    font-size: 24px
+    font-family: Roboto-Regular
+    font-weight: normal
+  h1
+    font-size: 48px
+    font-family: Roboto-Regular
+    font-weight: normal
+    margin-top: 25px
+  h3
+    position: absolute
+    bottom: 20px
+    font-family: Roboto-Regular
+    font-weight: normal
+    font-size: 18px
+  svg.history
+    position: absolute
+    bottom: 20px
+    right: 20px
+    width: 25px
+    height: 25px
+    cursor: pointer
+    &:hover
+      fill: $ais-white
+    &.active
+      fill: $ais-white
+  img.load
+    width: 100px
+    height: 100px
+  .toggleRub
+    position: absolute
+    top: 20px
+    right: 20px
+    display: flex
+    grid-gap: 5px
+    height: 29px
+    h4
+      display: flex
+      align-items: center
+      font-family: Roboto-Regular
+      font-weight: normal
+      cursor: pointer
+      font-size: 14px
+      color: $ais-second-black
+      &:hover
+        color: $ais-white
+      &.active
+        color: $ais-white

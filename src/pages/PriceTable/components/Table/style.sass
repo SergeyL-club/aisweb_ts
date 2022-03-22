@@ -1,0 +1,127 @@
+$ais-black: #181820
+$ais-white: #E8E8E8
+$ais-second-black: #3C3C4D
+$ais-blue: #6C76CC
+$ais-red: #D65353
+$ais-orange: #FFAD4D
+$ais-green: #5BD350
+
+table.priceTable
+  width: 100%
+  -ms-user-select: none
+  -moz-user-select: none
+  -khtml-user-select: none
+  -webkit-user-select: none
+  border-collapse: collapse
+  tr
+    width: 100vw
+    height: 100px
+    border-bottom: 1px solid $ais-second-black
+    th, td
+      font-size: 24px
+      font-weight: normal
+      font-family: Roboto-Regular
+      &:first-child
+        padding-left: 100px
+      &:last-child
+        padding-right: 100px
+    td
+      position: relative
+      text-align: center
+      &.paid
+        color: $ais-orange
+      &.seller.requisite
+        color: $ais-orange
+      &.finished
+        color: $ais-green
+      &.canceled, &.autocanceled
+        color: $ais-red
+      span
+        z-index: 1
+        min-width: 165px
+        position: absolute
+        background: $ais-black
+        border: 1px solid $ais-second-black
+        left: 50%
+        transform: translateX(-50%)
+        color: $ais-white
+        width: 80%
+        padding-top: 10px
+        padding-bottom: 10px
+      &:last-child
+        span
+          left: 40%
+          width: calc( 80% - 160px )
+      p
+        font-size: 24px
+        font-weight: normal
+        font-family: Roboto-Regular
+      h2
+        font-size: 24px
+        font-weight: normal
+        font-family: Roboto-Regular
+        &:last-child
+          color: $ais-second-black
+        &.time, &.minus
+          color: $ais-red
+          opacity: .5
+          &.slow
+            opacity: 1
+        &.plus
+          color: $ais-green
+          opacity: .5
+      button.acceptButton, button.menuAnswers
+        width: 132px
+        height: 50px
+        cursor: pointer
+        padding-left: 10px
+        padding-right: 10px
+        background: $ais-second-black
+        border: 0
+        font-size: 24px
+        font-weight: normal
+        font-family: Roboto-Regular
+        &:hover
+          background: $ais-blue
+        &:active
+          background: #636bbb
+      div.menuAnswers
+        z-index: 4
+        position: absolute
+        width: 120px
+        top: 80%
+        left: 50%
+        padding-left: 5px
+        padding-right: 5px
+        transform: translateX(-88%)
+        background: $ais-black
+        display: flex
+        flex-direction: column
+        border: 1px solid $ais-second-black
+        div
+          height: 50px
+          h2
+            height: 30px
+            margin-top: 1rem
+            cursor: pointer
+            transform: translateY(-25%)
+            background: $ais-black
+            border: 0
+            color: $ais-white
+            &:hover
+              color: $ais-blue
+      img.load
+        position: absolute
+        top: 0
+        width: 100px
+        left: 50vw
+        transform: translateX(-50%)
+
+@media (max-width: 1660px)
+  table.priceTable
+    tr
+      td
+        &:last-child
+          span
+            left: 37%
+            width: calc( 80% - 100px )

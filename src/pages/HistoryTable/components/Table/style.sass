@@ -1,0 +1,53 @@
+$ais-black: #181820
+$ais-white: #E8E8E8
+$ais-second-black: #3C3C4D
+$ais-blue: #6C76CC
+$ais-red: #D65353
+$ais-orange: #FFAD4D
+$ais-green: #5BD350
+
+table.historyTable
+  width: 100%
+  -ms-user-select: none
+  -moz-user-select: none
+  -khtml-user-select: none
+  -webkit-user-select: none
+  border-collapse: collapse
+  tr
+    width: 100vw
+    height: 100px
+    border-bottom: 1px solid $ais-second-black
+    th, td
+      font-size: 24px
+      font-weight: normal
+      font-family: Roboto-Regular
+      &:first-child
+        padding-left: 100px
+      &:last-child
+        padding-right: 100px
+    td
+      text-align: center
+      &.seller.requisite, &.paid
+        color: $ais-orange
+      &.finished, &.plus
+        color: $ais-green
+      &.canceled, &.autocanceled, &.minus
+        color: $ais-red
+      h2
+        font-size: 24px
+        font-weight: normal
+        font-family: Roboto-Regular
+        &:last-child
+          color: $ais-second-black
+        &.time, &.minus
+          color: $ais-red
+          opacity: .5
+        &.plus
+          color: $ais-green
+          opacity: .5
+      img.load
+        position: absolute
+        top: 0
+        width: 100px
+        left: 50vw
+        transform: translateX(-50%)

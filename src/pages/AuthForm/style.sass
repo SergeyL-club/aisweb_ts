@@ -1,0 +1,50 @@
+$ais-black: #181820
+$ais-white: #E8E8E8
+$ais-second-black: #3C3C4D
+$ais-blue: #6C76CC
+$ais-red: #D65353
+$ais-orange: #FFAD4D
+$ais-green: #5BD350
+
+.authForm
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  min-width: 450px
+  border: 1px solid $ais-second-black
+  display: flex
+  flex-direction: column
+  text-align: center
+  h1
+    margin-top: 20px
+    font-family: Roboto-Regular
+    font-weight: normal
+  input#token
+    width: calc( 100% - 65px )
+    margin: 30px auto auto
+    height: 2rem
+    outline: none
+    font-size: 18px
+    padding-left: 10px
+  div
+    width: calc( 100% - 55px )
+    margin: 30px auto auto
+    display: flex
+    label
+      user-select: none
+      cursor: pointer
+    input#saveMe
+      height: 20px
+      width: 20px
+      margin: auto 0 auto auto
+  button#authButton
+    width: calc( 100% - 55px )
+    margin: 30px auto 30px auto
+    background-color: $ais-second-black
+    border: 0
+    height: 40px
+    &:hover
+      background-color: #31313f
+    &:active
+      background-color: #2a2a36

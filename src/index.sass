@@ -1,0 +1,49 @@
+@font-face
+  font-family: Roboto-Regular
+  src: url("../public/fonts/Roboto-Regular.ttf")
+@font-face
+  font-family: Roboto-Meduim
+  src: url("../public/fonts/Roboto-Medium.ttf")
+@font-face
+  font-family: Roboto-Bold
+  src: url("../public/fonts/Roboto-Bold.ttf")
+
+$ais-black: #181820
+$ais-white: #E8E8E8
+$ais-second-black: #3C3C4D
+$ais-blue: #6C76CC
+$ais-red: #D65353
+$ais-orange: #FFAD4D
+$ais-green: #5BD350
+
+html
+  background: $ais-black
+  display: flex
+  flex-direction: column
+
+*
+  margin: 0
+  padding: 0
+  color: $ais-white
+  h1, h2, h3, h4, h5, h6, p, span, label
+    user-select: none
+    font-family: Roboto-Regular
+    font-weight: normal
+  h5, h6, p, span, label
+    font-family: Roboto-Regular
+    font-size: 20px
+  input
+    background: $ais-black
+    border: 1px solid $ais-second-black
+    outline: none
+    color: $ais-white
+    border: 1px solid $ais-second-black
+  button
+    background: $ais-second-black
+    color: $ais-white
+    border: 0
+    padding: 10px
+    &:hover
+      background: $ais-blue
+    &:active
+      background: #5b63ad

@@ -1,0 +1,119 @@
+
+$ais-black: #181820
+$ais-white: #E8E8E8
+$ais-second-black: #3C3C4D
+$ais-blue: #6C76CC
+$ais-red: #D65353
+$ais-orange: #FFAD4D
+$ais-green: #5BD350
+
+.navigation
+  display: flex
+  margin: auto
+  grid-gap: 100px
+  div
+    height: 80%
+    margin: auto
+    position: relative
+    h1
+      font-family: Roboto-Regular
+      font-weight: normal
+      font-size: 30px
+      cursor: pointer
+      color: $ais-second-black
+      &:hover
+        color: $ais-white
+      &.active
+        color: $ais-white
+    div.count
+      position: absolute
+      background: $ais-second-black
+      width: 30px
+      height: 30px
+      border-radius: 20px
+      right: -25px
+      top: -20px
+      &.Active, &.active
+        background: $ais-blue
+      &.myActive
+        background: $ais-green
+      &.checking
+        background: $ais-orange
+      h4
+        font-family: Roboto-Regular
+        font-weight: normal
+        cursor: default
+        position: absolute
+        font-size: 20px
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+
+.mobileNavigation
+  margin: auto auto auto 10px
+  position: relative
+  img
+    margin: auto
+    height: 40px
+    width: 40px
+    cursor: pointer
+  .menu
+    position: absolute
+    width: 400px
+    height: 150px
+    z-index: 1
+    background-color: $ais-black
+    border: 1px solid $ais-second-black
+    padding: 25px 20px 25px 10px
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    grid-gap: 15px
+    div
+      height: 80%
+      margin-left: 0
+      position: relative
+      h1
+        color: $ais-second-black
+        font-family: Roboto-Regular
+        font-weight: normal
+        font-size: 26px
+        cursor: pointer
+        &:hover
+          color: $ais-white
+        &.active
+          color: $ais-white
+      div.count
+        position: absolute
+        background: $ais-second-black
+        width: 25px
+        height: 25px
+        border-radius: 20px
+        right: -12px
+        top: -10px
+        &.Active, &.active
+          background: $ais-blue
+        &.myActive
+          background: $ais-green
+        &.checking
+          background: $ais-orange
+        h4
+          cursor: default
+          position: absolute
+          font-size: 20px
+          top: 50%
+          left: 50%
+          transform: translate(-50%,-50%)
+
+@media (max-width: 1300px)
+  .navigation
+    grid-gap: 7vw
+@media (max-width: 1280px)
+  .navigation
+    grid-gap: 6vw
+@media (max-width: 1250px)
+  .navigation
+    grid-gap: 4vw
+@media (max-width: 1195px)
+  .navigation
+    grid-gap: 2vw

@@ -1,0 +1,46 @@
+$ais-black: #181820
+$ais-white: #E8E8E8
+$ais-second-black: #3C3C4D
+$ais-blue: #6C76CC
+$ais-red: #D65353
+$ais-orange: #FFAD4D
+$ais-green: #5BD350
+
+.volute
+  height: calc( 100% - 40px )
+  width: calc( 100% - 40px )
+  padding: 20px
+  margin: auto
+  border: 1px solid $ais-second-black
+  max-width: 500px
+  grid-column: 3
+  grid-row: 1
+  position: relative
+  h2
+    font-size: 24px
+    font-family: Roboto-Regular
+    font-weight: normal
+  h1
+    font-size: 48px
+    font-family: Roboto-Regular
+    font-weight: normal
+    margin-top: 25px
+  h3
+    position: absolute
+    bottom: 20px
+    font-family: Roboto-Regular
+    font-weight: normal
+    font-size: 18px
+  img.load
+    width: 100px
+    height: 100px
+
+@media screen and (max-width: 1120px)
+  .volute
+    grid-row: 2
+    grid-column: 1
+
+@media screen and (max-width: 820px)
+  .volute
+    grid-row: 3
+    grid-column: 1

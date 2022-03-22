@@ -1,0 +1,40 @@
+$ais-black: #181820
+$ais-white: #E8E8E8
+$ais-second-black: #3C3C4D
+$ais-blue: #6C76CC
+$ais-red: #D65353
+$ais-orange: #FFAD4D
+$ais-green: #5BD350
+
+.bidLine
+  display: flex
+  margin: auto
+  border: 0
+  h2
+    font-family: Roboto-Regular
+    font-weight: normal
+    margin: auto
+  .marquee
+    width: 80%
+    margin: 0 auto
+    font-size: 26px
+    white-space: nowrap
+    overflow: hidden
+    border-radius: 4px
+  & p
+    display: inline-block
+    padding-left: 100%
+    font-size: 24px
+    animation: marquee 10s linear infinite
+  & p:hover
+    animation-play-state: paused
+
+@media screen and ( max-width: 860px )
+  .bidLine
+    width: 65%
+
+@keyframes marquee
+  0%
+    transform: translate(0, 0)
+  100%
+    transform: translate(-100%, 0)

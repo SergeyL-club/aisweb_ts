@@ -1,0 +1,65 @@
+
+$ais-black: #181820
+$ais-white: #E8E8E8
+$ais-second-black: #3C3C4D
+$ais-blue: #6C76CC
+$ais-red: #D65353
+$ais-orange: #FFAD4D
+$ais-green: #5BD350
+
+.background
+  position: fixed
+  width: 100vw
+  height: 100vh
+  top: 0
+  left: 0
+  background: #000
+  opacity: .2
+  z-index: 6
+
+.updateSaleForm
+  min-width: 380px
+  position: fixed
+  top: 50%
+  padding: 20px
+  z-index: 7
+  border: 1px solid $ais-second-black
+  left: 50%
+  transform: translate(-50%, -50%)
+  display: flex
+  flex-direction: column
+  grid-gap: 10px
+  background: $ais-black
+  input
+    min-height: 40px
+    font-size: 18px
+    padding-left: 10px
+    margin-bottom: 20px
+    &.off
+      opacity: .5
+  h1
+    font-family: Roboto-Regular
+    font-weight: normal
+    font-size: 28px
+    margin-bottom: 20px
+  div
+    display: flex
+    margin-bottom: 10px
+    grid-gap: 10px
+    &:last-child
+      margin-bottom: 0
+    &.buttons
+      margin-left: auto
+      button
+        &:first-child
+          background: $ais-red
+          &:hover
+            background: #cf5151
+          &:active
+            background: #bd4949
+        &:last-child
+          background: $ais-green
+          &:hover
+            background: #54c44a
+          &:active
+            background: #4aad41
