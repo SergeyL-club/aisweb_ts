@@ -32,11 +32,11 @@ export default class Row extends Component<IProps, any> {
             <h2>BTC</h2>
           </td>
           <td>
-            <h2>{this.props.log.balance_after}</h2>
+            <h2>{this.props.log.balance_before}</h2>
             <h2>BTC</h2>
           </td>
           <td>
-            <h2>{this.props.log.balance_before}</h2>
+            <h2>{this.props.log.balance_after}</h2>
             <h2>BTC</h2>
           </td>
           <td>{this.props.log.created_at}</td>
