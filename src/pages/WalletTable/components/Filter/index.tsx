@@ -78,7 +78,7 @@ export default class Filter extends Component<any, IStates> {
           <div className="menuSearch">
             <div>
               <h2
-                style={{ paddingRight: "20px" }}
+                style={{ paddingRight: "30px" }}
                 onClick={() => {
                   this.setState({ isFilter: !this.state.isFilter });
                 }}
