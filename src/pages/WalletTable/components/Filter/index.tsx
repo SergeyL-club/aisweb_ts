@@ -83,7 +83,7 @@ export default class Filter extends Component<any, IStates> {
                   this.setState({ isFilter: !this.state.isFilter });
                 }}
               >
-                Фильтер
+                Фильтр
               </h2>
               {this.state.isFilter ? (
                 <div className="filterWalletForm">
