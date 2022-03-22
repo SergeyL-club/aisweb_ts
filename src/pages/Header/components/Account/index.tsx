@@ -1,10 +1,22 @@
 import React, { Component } from "react";
 import { SocketContext } from "../../../../context/socket.context";
 import "./style.sass";
+import CopyComponent from "react-copy-to-clipboard";
 
-export default class Account extends Component {
+interface IStates {
+  isMenu: boolean;
+}
+
+export default class Account extends Component<any, IStates> {
   static contextType = SocketContext;
   context!: React.ContextType<typeof SocketContext>;
+
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      isMenu: false,
+    };
+  }
 
   exit() {
     this.context.socket.disconnect();
@@ -17,7 +29,7 @@ export default class Account extends Component {
     return (
       <div className="account">
         {this.context.accountInfo ? (
-          <h1 onClick={() => this.exit()}>
+          <h1 onClick={() => this.setState({ isMenu: !this.state.isMenu })}>
             {this.context.accountInfo.direction
               .toLocaleUpperCase()
               .slice(0, 1) +
@@ -31,6 +43,26 @@ export default class Account extends Component {
         ) : (
           <img className="loadAccount" src="/loading.gif" alt="Logo" />
         )}
+        {this.state.isMenu ? (
+          <div className="menu">
+            <div>
+              <CopyComponent
+                text={`${
+                  this.context.accountInfo
+                    ? this.context.accountInfo.depositToken
+                    : ""
+                }`}
+              >
+                <h2 onClick={() => this.setState({ isMenu: false })}>
+                  Токен для пополнения
+                </h2>
+              </CopyComponent>
+            </div>
+            <div>
+              <h2 onClick={() => this.exit()}>Выход</h2>
+            </div>
+          </div>
+        ) : null}
       </div>
     );
   }

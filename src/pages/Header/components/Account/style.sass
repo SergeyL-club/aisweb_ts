@@ -1,5 +1,39 @@
+$ais-black: #181820
+$ais-white: #E8E8E8
+$ais-second-black: #3C3C4D
+$ais-blue: #6C76CC
+$ais-red: #D65353
+$ais-orange: #FFAD4D
+$ais-green: #5BD350
+
 .account
   margin: auto 100px auto auto
+  .menu
+    position: absolute
+    width: 300px
+    height: 70px
+    transform: translateX(-70%)
+    z-index: 1
+    background-color: $ais-black
+    border: 1px solid $ais-second-black
+    padding: 10px 20px 10px 10px
+    display: flex
+    flex-direction: column
+    div
+      height: 80%
+      margin-left: 0
+      position: relative
+      h2
+        text-align: right
+        color: $ais-white
+        font-family: Roboto-Regular
+        font-weight: normal
+        font-size: 26px
+        cursor: pointer
+        &:hover
+          color: $ais-blue
+        &.active
+          color: #5e66b1
   h1
     cursor: pointer
     font-family: Roboto-Regular
