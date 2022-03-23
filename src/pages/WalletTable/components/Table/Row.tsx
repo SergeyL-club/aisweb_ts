@@ -50,17 +50,23 @@ export default class Row extends Component<IProps, IStates> {
       <>
         <tr>
           <td>
-            <input
-              onClick={() =>
-                this.context.socket.emit("toggle wallet", {
-                  wallet_id: this.props.wallet.id,
-                })
-              }
-              style={{ cursor: "pointer" }}
-              type="checkbox"
-              ref={this.checked}
-              defaultChecked={this.props.wallet.enable}
-            />
+            {this.props.wallet.banned ? (
+              <>
+                <h2 style={{ color: "#D65353" }}>Заблокирована</h2>
+              </>
+            ) : (
+              <input
+                onClick={() =>
+                  this.context.socket.emit("toggle wallet", {
+                    wallet_id: this.props.wallet.id,
+                  })
+                }
+                style={{ cursor: "pointer" }}
+                type="checkbox"
+                ref={this.checked}
+                defaultChecked={this.props.wallet.enable}
+              />
+            )}
           </td>
           <td>
             <CopyComponent
