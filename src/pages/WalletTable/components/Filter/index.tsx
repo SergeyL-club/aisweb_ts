@@ -33,6 +33,12 @@ export default class Filter extends Component<any, IStates> {
     this.setState({ isCreateWallet: false });
   }
 
+  enterFilter(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter") {
+      this.setFilter();
+    }
+  }
+
   setFilter() {
     if (this.reqRef.current && this.descRef.current) {
       this.setState({
@@ -90,6 +96,7 @@ export default class Filter extends Component<any, IStates> {
                   <label htmlFor="req">Реквизиты:</label>
                   <input
                     defaultValue={this.state.inputReqValue}
+                    onKeyDown={(e) => this.enterFilter(e)}
                     ref={this.reqRef}
                     type="text"
                     name="req"
@@ -99,6 +106,7 @@ export default class Filter extends Component<any, IStates> {
                   <input
                     defaultValue={this.state.inputDescValue}
                     ref={this.descRef}
+                    onKeyDown={(e) => this.enterFilter(e)}
                     type="text"
                     name="desc"
                     id="desc"

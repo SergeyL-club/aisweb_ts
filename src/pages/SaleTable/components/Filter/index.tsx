@@ -53,7 +53,6 @@ export default class Filter extends Component<any, Stats> {
 
   checkingNumber(el: React.ChangeEvent<HTMLInputElement>) {
     let value = el.currentTarget.value;
-    let name = el.currentTarget.name;
 
     if (
       /[0-9]/.test(value[value.length - 1]) &&
@@ -98,6 +97,12 @@ export default class Filter extends Component<any, Stats> {
         summ: "",
       });
       this.setState({ isFilter: false });
+    }
+  }
+
+  enterFilter(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter") {
+      this.setFilterAdd();
     }
   }
 
@@ -223,6 +228,7 @@ export default class Filter extends Component<any, Stats> {
               <div className="filterSaleForm">
                 <label htmlFor="id">ID заявки:</label>
                 <input
+                  onKeyDown={(e) => this.enterFilter(e)}
                   ref={this.idRef}
                   type="text"
                   name="id"
@@ -233,6 +239,7 @@ export default class Filter extends Component<any, Stats> {
                 <input
                   ref={this.reqRef}
                   type="text"
+                  onKeyDown={(e) => this.enterFilter(e)}
                   name="req"
                   id="req"
                   defaultValue={this.state.inputReqValue}
@@ -243,6 +250,7 @@ export default class Filter extends Component<any, Stats> {
                   ref={this.summRef}
                   type="text"
                   name="summ"
+                  onKeyDown={(e) => this.enterFilter(e)}
                   id="summ"
                   defaultValue={this.state.inputSummValue}
                 />
