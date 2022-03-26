@@ -270,7 +270,7 @@ export default class SocketProvider extends Component<any, IState> {
       ((state.priceNotf &&
         state.priceNotf.status === "myActive" &&
         this.state.priceNotf.number > state.priceNotf.number) ||
-        !state.priceNotf)
+        (!state.priceNotf && this.state.priceNotf.status === "myActive"))
     ) {
       let audio = new Audio("/audio.mp3");
       audio.play();
