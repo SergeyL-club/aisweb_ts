@@ -49,7 +49,7 @@ export default class ToggleWaletForm extends Component<any, IStates> {
           >
             <h1>Кошелек {`${this.state.wallet_id} был изменен статус`}</h1>
             <h2>
-              Статус изменения
+              Статус изменения{" "}
               <span className={this.state.wallet_status ? "plus" : "minus"}>
                 {this.state.wallet_status ? "Включен" : "Выключен"}
               </span>

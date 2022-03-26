@@ -13,6 +13,7 @@ interface IProps {
 interface IStates {
   isMenu: boolean;
   copyRequisites: boolean;
+  checked: boolean;
 }
 
 export default class Row extends Component<IProps, IStates> {
@@ -26,23 +27,38 @@ export default class Row extends Component<IProps, IStates> {
     this.state = {
       isMenu: false,
       copyRequisites: false,
+      checked: props.wallet.enable,
     };
     this.updateCheck = this.updateCheck.bind(this);
     this.checked = createRef();
   }
 
-  updateCheck(input: { wallet_status: boolean; wallet_id: string }) {
-    if (
-      this.checked.current &&
-      this.checked.current.checked !== input.wallet_status &&
-      String(this.props.wallet.id) === input.wallet_id
-    ) {
+  updateCheck(input: { wallet_status: boolean; wallet_id: number }) {
+    if (this.checked.current && this.props.wallet.id === input.wallet_id) {
       this.checked.current.checked = input.wallet_status;
+      this.setState({ checked: input.wallet_status });
     }
   }
 
   componentDidMount() {
     this.context.socket.on("toggle wallet", this.updateCheck);
+  }
+
+  componentDidUpdate(props: IProps) {
+    if (props.wallet !== this.props.wallet) {
+      this.setState({
+        isMenu: false,
+        copyRequisites: false,
+        checked: this.props.wallet.enable,
+      });
+      if (this.checked.current) {
+        this.checked.current.checked = this.props.wallet.enable;
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    this.context.socket.off("toggle wallet", this.updateCheck);
   }
 
   render() {
@@ -64,7 +80,7 @@ export default class Row extends Component<IProps, IStates> {
                 style={{ cursor: "pointer" }}
                 type="checkbox"
                 ref={this.checked}
-                defaultChecked={this.props.wallet.enable}
+                defaultChecked={this.state.checked}
               />
             )}
           </td>
@@ -81,7 +97,7 @@ export default class Row extends Component<IProps, IStates> {
             >
               <h2
                 style={{ cursor: "pointer" }}
-                className={`number ${this.props.wallet.enable ? "active" : ""}`}
+                className={`number ${this.state.checked ? "active" : ""}`}
               >
                 {this.props.wallet.number[0] === "+"
                   ? prettifyPhone(this.props.wallet.number)
