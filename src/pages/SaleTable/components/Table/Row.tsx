@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StatusOrder } from ".";
 import { OrderSale } from "../../../../context/interfaces";
-import { prettify } from "../../../../functions/prettify";
+import { prettify, prettifyPhone } from "../../../../functions/prettify";
 import { showDiff } from "../../../../functions/showDiff";
 import { StatusSell } from "../Filter";
 import CopyComponent from "react-copy-to-clipboard";
@@ -125,7 +125,9 @@ export default class Row extends Component<IProps, IStates> {
               text={this.props.order.requisities}
             >
               <h2 style={{ cursor: "pointer" }}>
-                {prettify(Number(this.props.order.requisities), 4)}
+                {this.props.order.requisities[0] === "+"
+                  ? prettifyPhone(this.props.order.requisities)
+                  : prettify(Number(this.props.order.requisities), 4)}
               </h2>
             </CopyComponent>
             {this.state.copyRequisites ? (
